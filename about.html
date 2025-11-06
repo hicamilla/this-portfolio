@@ -10,6 +10,10 @@
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/C-logocolor.png">
 
+  <!-- Perf preconnect -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
@@ -28,10 +32,189 @@
   <div id="navbar-placeholder"></div>
 
   <!-------- MAIN CONTENT -------->
+  <main id="about" class="about-page" aria-label="About Camilla">
+    <!-- Intro -->
+    <section class="about-intro container" aria-label="about-title">
+      <div class="intro-text">
+        <div class="intro-head">
+          <h1 class="intro-title text-uppercase">
+            Behind the work
+          </h1>
+          <p class="intro-sub fst-italic">
+            Marketing strategist jamming with code — calm design, clear words, tidy CSS.
+          </p>
+        </div>
+        <p class="intro-bio text-break fw-normal">
+          I've spent the last 9 years gathering a mix of professional experiences, and for the past 5, I've been deep in
+          the world of design — working with startups and established brands to bring ideas to life. Design, for me,
+          isn't just a buzzword or a business trend it's something that inspires me daily.
+          <br />
+          <br />
+          It's in the small, quiet moments: the layout of a train ticket machine that just works, the way an app knows
+          what you need before you do, or the satisfying click of a well-designed lid.The funny thing is, the best
+          design often goes unnoticed it's so intuitive, it disappears into the background.
+          <br />
+          <br />
+          And maybe that's the point. In a world full of noise, I'm drawn to the simplicity and elegance of things that
+          just work. It's that rare space where business meets creativity, and when they don't naturally meet, I enjoy
+          being the
+          bridge.
+        </p>
+      </div>
 
+      <figure class="intro-photo-wrap">
+        <img class="intro-photo" src="/images/photo-perfil.jpeg" alt="Portrait of Camilla" />
+      </figure>
 
+      <!-- Icons row-->
+      <div class="about-cta" role="group" aria-label="Icon Socials">
+        <div class="about-socials">
+          <!--Email-->
+          <a href="mailto:hicamillacardoso@gmail.com" class="cta-pill" title="Email">
+            <i class="fa-solid fa-square-envelope fa-xl" aria-hidden="true"></i>
+          </a>
 
+          <!--GitHub-->
+          <a href="http://www.github.com/hicamilla" class="cta-pill" target="_blank" rel="noopener" title="GitHub">
+            <i class="fa-brands fa-square-github fa-xl" aria-hidden="true"></i>
+          </a>
 
+          <!--LinkedIn-->
+          <a href="http://www.linkedin.com/in/hicamilla" class="cta-pill" target="_blank" rel="noopener"
+            title="LinkedIn">
+            <i class="fa-brands fa-linkedin fa-xl" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!--Resume-->
+        <a href="#" class="resume-btn" download aria-label="Download resume">
+          <i class="fa fa-arrow-down" aria-hidden="true"></i>
+          <span class="text-uppercase small">Resume</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience (timeline)-->
+    <section class="about-timeline container" aria-label="Experience highlights">
+      <ul class="timeline">
+        <!--Item 01-->
+        <li class="t-item left reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <h3 class="t-year">
+              <time datetime="2025">2025</time>–<span aria-label="Present">Now</span>
+            </h3>
+            <p class="t-desc">Freelance — Strategy + front-end practice in Germany.</p>
+          </div>
+        </li>
+
+        <!--Item 02-->
+        <li class="t-item right reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <h3 class="t-year">
+              <time datetime="2023">2023</time>–<time datetime="2024">2024</time>
+            </h3>
+            <p class="t-desc">Marketing Strategist · digital bank (Brazil), shipping growth & comms initiatives.</p>
+          </div>
+        </li>
+
+        <!--Item 03-->
+        <li class="t-item left reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <h3 class="t-year">
+              <time datetime="2020">2020</time>–<time datetime="2023">2023</time>
+            </h3>
+            <p class="t-desc">Digital agencies — campaigns, content, and data-informed strategy.</p>
+          </div>
+        </li>
+
+        <!--Item 04-->
+        <li class="t-item right reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <h3 class="t-year">
+              <time datetime="2018">2018</time>–<time datetime="2020">2020</time>
+            </h3>
+            <p class="t-desc">Brand & communications projects across different industries.</p>
+          </div>
+        </li>
+
+        <!--Item 05-->
+        <li class="t-item left reveal">
+          <span class="t-dot" aria-hidden="true"></span>
+          <div class="t-card">
+            <h3 class="t-year">
+              <time datetime="2014">2014</time>–<time datetime="2017">2017</time>
+            </h3>
+            <p class="t-desc">B.A. in Marketing & Communication — first real projects and internships.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Languages & Tools -->
+    <section class="about-stacks container" aria-labelledby="stacks-title">
+      <h2 id="stacks-title" class="visually-hidden">Languages and tools</h2>
+      <div class="stack-col">
+        <h3 class="h5">What I speak</h3>
+        <div class="chip-row" role="list">
+          <span class="chip">Portuguese</span>
+          <span class="chip">English</span>
+          <span class="chip">German</span>
+          <span class="chip">Spanish</span>
+        </div>
+      </div>
+      <div class="stack-col">
+        <h3 class="h5">Tools I use</h3>
+        <div class="chip-row" role="list">
+          <span class="chip" role="listitem">HTML</span>
+          <span class="chip" role="listitem">CSS</span>
+          <span class="chip" role="listitem">JavaScript</span>
+          <span class="chip" role="listitem">Bootstrap</span>
+          <span class="chip" role="listitem">Git & GitHub</span>
+          <span class="chip" role="listitem">VS Code</span>
+          <span class="chip" role="listitem">Figma</span>
+          <span class="chip" role="listitem">Recharts</span>
+          <span class="chip" role="listitem">Notion</span>
+        </div>
+      </div>
+    </section>
+
+    <!--Interests & Skills-->
+    <section class="about-extras container" aria-labelledby="extras-title">
+      <h2 class="extras-title" class="visually-hidden">Interests and Skills</h2>
+      <div class="extra-col">
+        <h3 class="h5">Interests</h3>
+        <div class="chip-row" role="list">
+          <span class="chip" role="listitem">Otto</span>
+          <span class="chip" role="listitem">Coffee</span>
+          <span class="chip" role="listitem">Podcasts</span>
+          <span class="chip" role="listitem">Pop punk</span>
+          <span class="chip" role="listitem">Documentaries</span>
+          <span class="chip" role="listitem">Pottery</span>
+          <span class="chip" role="listitem">Books</span>
+        </div>
+      </div>
+      <div class="extra-col">
+        <h3 class="h5">Skills</h3>
+        <p class="skills-line">
+          UX thinking • Content strategy • Component systems • Accessibility • Performance-aware front-end
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="about-edu container">
+      <h2 class="h5">Education & Courses</h2>
+      <ul class="edu-list">
+        <li>B.A. Marketing & Communication.</li>
+        <li>SheCodes Bootcamp - HTML, CSS, JavaScript & Python.</li>
+        <li>Workshops: UX Writing, Rapid Prototyping, Product Analytics.</li>
+      </ul>
+    </section>
+  </main>
   <!--------- FOOTER --------->
   <div id="footer-placeholder"></div>
 
