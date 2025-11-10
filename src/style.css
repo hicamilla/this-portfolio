@@ -11,14 +11,6 @@
   --color-accent: #a6a5c4;
   --color-accent-alt: #c7b5bf;
 
-  /*Gradient*/
-  --gradient: linear-gradient(180deg,
-      #A6A5C4 0%,
-      #CBBFD0 32%,
-      #E4D2D8 50%,
-      #B19EAA 68%,
-      #2E2930 100%);
-
   /*Fonts*/
   --font-title: 'Vercetti';
   --font-body: 'Satoshi';
@@ -235,7 +227,7 @@ hr:hover {
 }
 
 .hero-subtitle span {
-  font-weight: 700
+  font-weight: 700;
 }
 
 /* Arrow down */
@@ -372,17 +364,17 @@ hr:hover {
 
 /* ========= Work Projects ========= */
 .work-section-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 4rem;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
   width: 100%;
   max-width: 1200px;
   margin-inline: auto;
+  margin-top: 4rem;
   padding-inline: 1rem;
-  overflow: visible;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .project-header {
@@ -406,20 +398,17 @@ hr:hover {
 
 /* Project Card */
 .work-project-list {
-  display: block;
   position: relative;
-  font-weight: 700;
-  color: var(--text-primary);
-  border: 1px solid var(--text-primary);
-  text-decoration: none;
-  overflow: visible;
-  transition: background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.3s ease,
-    color 0.3s ease;
-  padding: 2rem;
+  display: block;
   cursor: pointer;
   z-index: 5;
+  overflow: visible;
+  padding: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid var(--text-primary);
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 /* Hover behavior */
@@ -446,7 +435,7 @@ hr:hover {
 }
 
 .work-project-list:hover .text-span {
-  color: var(--bg-color);
+  color: var(--color-bg);
 }
 
 /* Tags (tech bubbles)*/
@@ -482,9 +471,9 @@ hr:hover {
   max-width: 420px;
   opacity: 0;
   z-index: 20;
+  pointer-events: none;
   transition: transform 0.4s ease,
     opacity 0.4s ease;
-  pointer-events: none;
 }
 
 .work-project-list:hover .hover-image-wrapper {
@@ -500,26 +489,8 @@ hr:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Ensure parent allows overflow and is correctly positioned */
-.work-project-list {
-  position: relative;
-  overflow: visible;
-  z-index: 5;
-}
-
-.work-project-list:hover {
-  z-index: 10;
-}
-
-.work-section-container {
-  overflow: visible;
-  position: relative;
-  z-index: 1;
-}
 
 /* ========= Languages Section ========= */
-
-
 .languages-hero {
   display: flex;
   flex-direction: column;
@@ -563,7 +534,7 @@ hr:hover {
 }
 
 /* ===================== ABOUT PAGE ===================== */
-/* About Intro */
+/* ==== About Intro ==== */
 .about-page .about-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -585,44 +556,7 @@ hr:hover {
   max-width: min(84ch, 100%);
 }
 
-.about-page .about-cta {
-  grid-area: cta;
-  justify-self: start;
-  display: flex;
-  align-items: center;
-  gap: clamp(12px, 1.2vw, 20px);
-  align-items: start;
-}
-
-.about-page .intro-title {
-  font-family: var(--font-title);
-  font-weight: 900;
-  font-size: clamp(2.25rem, 5vw, 3.5rem);
-  color: var(--text-primary);
-  letter-spacing: -0.07em;
-  line-height: 1.1;
-  margin: 0;
-}
-
-.about-page .intro-sub {
-  font-family: var(--font-body);
-  font-size: clamp(0.5rem, 1vw, 1.2rem);
-  color: var(--text-secondary);
-  margin: .6rem 0 2rem;
-  opacity: .9;
-}
-
-.about-page .intro-bio {
-  font-family: var(--font-body);
-  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
-  color: var(--text-primary);
-  grid-column: 1;
-  grid-row: 2;
-  max-width: min(84ch, 100%);
-  line-height: 1.5;
-}
-
-/*Perfil Image*/
+/* ==== Perfil Image ==== */
 .about-page .intro-photo-wrap {
   grid-area: photo;
   align-self: center;
@@ -638,30 +572,230 @@ hr:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
 }
 
-/*Row Social + Resume*/
-
-
-/*Button resume*/
-.about-page .about-intro .about-cta .resume-btn {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-body);
-  font-weight: 650;
-  color: var(--text-primary);
-  background: #f7f7f5;
-  text-decoration: none;
-  border-radius: 999px;
-  white-space: nowrap;
-  gap: .5rem;
-  padding: .6rem 1rem;
-  flex: 0 0 auto;
-  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
-  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+/* ==== Experience Timeline ==== */
+.about-timeline {
+  display: grid;
+  grid-template-columns: 1fr min(900px, 55vw);
+  column-gap: clamp(32px, 7vw, 120px);
+  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+  align-items: start;
 }
 
-.about-page .about-intro .about-cta .resume-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+.about-timeline .section-title {
+  grid-column: 1 / -1;
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.07em;
+  line-height: 1.05;
+  margin: 0 0 clamp(20px, 3vw, 36px);
+  padding-bottom: clamp(8px, 1vw, 36px);
+  border-bottom: 1px solid rgba(0, 0, 0, .18);
+}
+
+.about-timeline .timeline {
+  grid-column: 2;
+  margin: 0;
+  padding: 0;
+  position: static;
+}
+
+.about-timeline .t-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 10px 2rem;
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.about-timeline .t-item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.about-timeline .t-role {
+  margin: 0 0 .35rem 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+}
+
+.about-timeline .t-company {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.333vw, 1rem);
+  color: var(--text-secondary);
+  opacity: .9;
+}
+
+.about-timeline .t-range {
+  justify-self: end;
+  align-self: center;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.333vw, 1rem);
+  color: var(--text-secondary);
+  letter-spacing: .01em;
+  opacity: .9;
+}
+
+/* ==== Education ==== */
+.about-edu {
+  display: grid;
+  grid-template-columns: 1fr min(900px, 55vw);
+  column-gap: clamp(32px, 7vw, 120px);
+  align-items: start;
+  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+}
+
+.about-edu .section-title {
+  grid-column: 1 / -1;
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.07em;
+  line-height: 1.05;
+  margin: 0 0 clamp(20px, 3vw, 36px);
+  padding-bottom: clamp(8px, 1vw, 12px);
+  border-bottom: 1px solid rgba(0, 0, 0, .18);
+}
+
+.about-edu .edu-list {
+  grid-column: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.about-edu .e-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 10px 2rem;
+  padding: clamp(18px, 2.2vw, 28px) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .12)
+}
+
+.about-edu .e-card {
+  margin: 0;
+  padding: 0;
+}
+
+.about-edu .e-degree {
+  margin: 0 0 .35rem 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--text-primary);
+}
+
+.about-edu .e-school {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.333vw, 1rem);
+  color: var(--text-secondary);
+  opacity: .9;
+}
+
+.about-edu .e-range {
+  justify-self: end;
+  align-self: center;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  font-size: clamp(0.9375rem, 1.333vw, 1rem);
+  color: var(--text-secondary);
+  letter-spacing: .01em;
+  opacity: .9;
+}
+
+/* ==== Stacks ==== */
+.about-stacks {
+  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+}
+
+.stacks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 36px);
+  column-gap: clamp(32px, 6vw, 96px);
+}
+
+.stack-card .stack-title {
+  margin: 0 0 clamp(10px, 1.8vw, 14px);
+  font-family: var(--font-title);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(1.3125rem, 3.2vw, 1.8125rem);
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  padding-bottom: clamp(6px, 1vw, 10px);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.stack-list {
+  margin: 0;
+  padding: 0;
+}
+
+.s-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: baseline;
+  column-gap: 1rem;
+  row-gap: .2rem;
+  font-family: var(--font-body);
+  padding: clamp(12px, 1.8vw, 16px) 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.about-lang .s-item {
+  grid-template-columns: 1fr auto;
+}
+
+.about-lang .s-level {
+  justify-self: end;
+  white-space: nowrap;
+  font-size: clamp(1rem, 1.4vw, 1rem);
+  color: var(--text-secondary);
+  letter-spacing: .01em;
+  opacity: .9;
+}
+
+.about-skills .s-level,
+.about-tools .s-level {
+  display: none;
+}
+
+/* ==== Resume Download ==== */
+.btn-resume {
+  padding-block: clamp(48px, 6vw, 72px);
+}
+
+.res-download {
+  display: block;
+  text-align: center;
+  align-items: center;
+  font-family: var(--font-accent);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: #c0392b;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1.6px;
+}
+
+.res-download:hover,
+.res-download:focus,
+.res-download:active {
+  -webkit-transform: scale(1) rotate(4deg);
+  transform: scale(1) rotate(4deg);
 }
 
 /* ========= Footer ========= */
@@ -678,7 +812,6 @@ hr:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 /* Left: social icons */
@@ -752,6 +885,26 @@ hr:hover {
   .work-text p {
     font-size: 45px;
   }
+
+  .about-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .about-timeline .timeline {
+    grid-column: 1;
+  }
+
+  .about-edu {
+    grid-template-columns: 1fr;
+  }
+
+  .about-edu .edu-list {
+    grid-column: 1;
+  }
+
+  .stacks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 
@@ -806,6 +959,25 @@ hr:hover {
     transition: transform 0.4s ease,
       opacity 0.4s ease;
     pointer-events: none;
+  }
+
+  .about-timeline .t-item {
+    grid-template-columns: 1fr;
+    gap: .25rem 0;
+  }
+
+  .about-timeline .t-range {
+    justify-self: start;
+    margin-top: .25rem;
+  }
+
+  .about-edu .e-range {
+    justify-self: start;
+    margin-top: .25rem;
+  }
+
+  .stacks-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer {
