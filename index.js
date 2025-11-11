@@ -123,7 +123,7 @@ function loadComponent(selector, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  //Adjust path depending on whether you use local or live server
-  loadComponent("#navbar-placeholder", "./components/navbar.html");
-  loadComponent("#footer-placeholder", "./components/footer.html");
+  const ROOT = location.pathname.includes('/projects/') ? '..' : '.';
+  loadComponent("#navbar-placeholder", '${ROOT}/components/navbar.html');
+  loadComponent("#footer-placeholder", '${ROOT}/components/footer.html');
 });

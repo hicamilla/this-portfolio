@@ -197,7 +197,7 @@ hr:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .hero-content {
@@ -535,41 +535,48 @@ hr:hover {
 
 /* ===================== ABOUT PAGE ===================== */
 /* ==== About Intro ==== */
+.about-page section.container {
+  margin-inline: auto;
+  max-width: 1200px;
+}
+
+.about-intro.container {
+  padding-block: clamp(72px, 9vw, 120px);
+}
+
 .about-page .about-intro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: auto auto;
-  grid-template-areas: "text photo" "cta photo";
+  grid-template-columns: minmax(360px, 1fr) clamp(260px, 28vw, 420px);
   column-gap: clamp(24px, 4vw, 48px);
-  row-gap: clamp(12px, 2vw, 20px);
-  align-items: start;
-  margin: 50px 75px;
+  align-items: center;
+  margin: 0;
 }
 
 .about-page .intro-text {
-  grid-area: text;
+  grid-area: 1 / 1 / 2 / 2;
+  max-width: 62ch;
 }
 
-.about-page .intro-head {
-  grid-column: 1;
-  grid-row: 1;
-  max-width: min(84ch, 100%);
+.about-page .about-head {
+  max-width: (70ch, 100%);
 }
 
 /* ==== Perfil Image ==== */
 .about-page .intro-photo-wrap {
-  grid-area: photo;
+  grid-area: 1 / 2 / 2 / 3;
   align-self: center;
-  margin: 0;
-  transform: none;
 }
 
 .about-page .intro-photo {
-  width: clamp(320px, 34vw, 450px);
-  object-fit: cover;
-  border-radius: 42% 58% 46% 54% / 54% 40% 60% 46%;
-  /* blob-ish*/
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.about-page .intro-photo:hover {
+  filter: blur(4px);
 }
 
 /* ==== Experience Timeline ==== */
@@ -577,7 +584,7 @@ hr:hover {
   display: grid;
   grid-template-columns: 1fr min(900px, 55vw);
   column-gap: clamp(32px, 7vw, 120px);
-  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+  padding-block: clamp(40px, 5vw, 60px);
   align-items: start;
 }
 
@@ -586,7 +593,7 @@ hr:hover {
   font-family: var(--font-title);
   font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.5rem;
   letter-spacing: -0.07em;
   line-height: 1.05;
   margin: 0 0 clamp(20px, 3vw, 36px);
@@ -649,7 +656,7 @@ hr:hover {
   grid-template-columns: 1fr min(900px, 55vw);
   column-gap: clamp(32px, 7vw, 120px);
   align-items: start;
-  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+  padding-block: clamp(40px, 5vw, 60px);
 }
 
 .about-edu .section-title {
@@ -657,7 +664,7 @@ hr:hover {
   font-family: var(--font-title);
   font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 2.5rem;
   letter-spacing: -0.07em;
   line-height: 1.05;
   margin: 0 0 clamp(20px, 3vw, 36px);
@@ -716,12 +723,12 @@ hr:hover {
 
 /* ==== Stacks ==== */
 .about-stacks {
-  padding-block: clamp(72px, 8vw, 100px) clamp(48px, 6vw, 72px);
+  padding-block: clamp(40px, 5vw, 60px);
 }
 
 .stacks-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 36px);
   column-gap: clamp(32px, 6vw, 96px);
 }
@@ -731,7 +738,7 @@ hr:hover {
   font-family: var(--font-title);
   font-weight: 900;
   text-transform: uppercase;
-  font-size: clamp(1.3125rem, 3.2vw, 1.8125rem);
+  font-size: 2rem;
   letter-spacing: -0.05em;
   line-height: 1.1;
   color: var(--text-primary);
@@ -778,13 +785,25 @@ hr:hover {
   padding-block: clamp(48px, 6vw, 72px);
 }
 
+.res-cta {
+  display: block;
+  text-align: center;
+  align-items: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 3vw, 1.25rem);
+  color: var(--text-primary);
+}
+
 .res-download {
   display: block;
   text-align: center;
   align-items: center;
-  font-family: var(--font-accent);
+  font-family: var(--font-title);
   font-size: clamp(1.2rem, 3vw, 2rem);
-  color: var(--text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-sec);
   text-decoration: underline;
   text-decoration-color: #c0392b;
   text-decoration-style: solid;
@@ -875,6 +894,154 @@ hr:hover {
   margin: 0.81rem 0;
 }
 
+/* ========= PROJECTS PAGES ========= */
+.project-page .case-hero {
+  padding-block: clamp(48px, 6vw, 72px);
+}
+
+.project-page .case-head {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+.project-page .case-title {
+  font-family: var(--font-title);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0 0 .25rem;
+  color: var(--text-primary)
+}
+
+.project-page .case-sub {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0 0 1rem;
+}
+
+/* Tech tags */
+.project-page .case-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.project-page .case-tag {
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: .35rem .75rem;
+  color: var(--text-primary);
+}
+
+/* Action buttons */
+.project-page .case-action {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.project-page .btn-ghost {
+  border: 1px solid var(--text-primary);
+  border-radius: 999px;
+  padding: .5rem .9rem;
+  color: var(--text-primary);
+  background: transparent;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease, transform .15s ease;
+}
+
+.project-page .btn-ghost:hover {
+  background: var(--text-primary);
+  color: var(--color-bg);
+  transform: translateY(-1px);
+}
+
+/* Cover image in hero */
+.project-page .case-cover {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
+  border: 1px solid rgba(0, 0, 0, .08);
+}
+
+/* README body(left) + facts (right) */
+.project-page .case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: clamp(16px, 2.2vw, 28px);
+  align-items: stretch;
+}
+
+/* Card look*/
+.project-page .case-card {
+  background: var(--bg, #fff);
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 18px;
+  padding: clamp(16px, 2.2vw, 24px);
+  box-shadow: 0 1px rgba(0, 0, 0, .02);
+}
+
+/* Headings inside cards */
+.project-page .case-card h3 {
+  font-family: var(--font-title);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: .5rem 0 .8rem;
+  text-transform: none;
+}
+
+.project-page .case-card p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px 0 10px;
+
+}
+
+.project-page .case-card ul {
+  padding: 0;
+}
+
+.project-page .case-card li {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 0 10px 0 10px;
+}
+
+/* Single showcase image section */
+.project-page .case-figure {
+  margin-top: clamp(16px, 3vw, 28px);
+}
+
+.project-page .case-image {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, .08);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
+}
+
+.project-page .case-cap {
+  margin-top: .5rem;
+  font-family: var(--font-accent);
+  font-size: clamp(.9rem, 1.4vw, 1rem);
+  color: var(--text-secondary);
+  opacity: .9;
+}
+
+/* Bottom navigation */
+.project-page .case-bottom {
+  margin: clamp(16px, 3vw, 28px) 0;
+}
+
 /* ========= RESPONSIVE ========= */
 @media (max-width:1024px) {
 
@@ -903,7 +1070,32 @@ hr:hover {
   }
 
   .stacks-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width:900px) {
+  .project-page .case-head {
+    grid-template-columns: 1fr;
+    /* stack title + cover */
+  }
+
+  .project-page .case-grid {
+    grid-template-columns: 1fr;
+    /* stack readme + facts */
+  }
+}
+
+@media (max-width:920px) {
+
+  .about-timeline,
+  .about-edu {
+    grid-template-columns: 1fr;
+  }
+
+  .about-timeline .timeline,
+  .about-edu .edu-list {
+    grid-column: 1;
   }
 }
 
@@ -961,6 +1153,22 @@ hr:hover {
     pointer-events: none;
   }
 
+
+  .about-page .about-intro {
+    display: block;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-photo {
+    display: none;
+  }
+
+  .about-timeline .t-item,
+  .about-edu .e-item {
+    gap: .25rem 0;
+  }
+
   .about-timeline .t-item {
     grid-template-columns: 1fr;
     gap: .25rem 0;
@@ -978,6 +1186,7 @@ hr:hover {
 
   .stacks-grid {
     grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .footer {
@@ -1029,6 +1238,10 @@ hr:hover {
   .work-text p {
     font-size: 32px;
   }
+}
 
-
+@media(prefers-reduced-motion:reduce) {
+  .work-project-list:hover {
+    transform: none;
+  }
 }
