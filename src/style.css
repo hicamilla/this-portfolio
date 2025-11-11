@@ -51,7 +51,7 @@ hr {
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   opacity: 0.6;
-  padding-bottom: clamp(1rem, 5vw, 1rem);
+  padding-bottom: clamp(1rem, 6vw, 1rem);
   transition: opacity 0.3s ease;
 }
 
@@ -1039,7 +1039,8 @@ hr:hover {
 
 /* Bottom navigation */
 .project-page .case-bottom {
-  margin: clamp(16px, 3vw, 28px) 0;
+  margin-top: clamp(16px, 3vw, 28px);
+  margin-bottom: clamp(72px, 12vw, 140px);
 }
 
 /* ========= RESPONSIVE ========= */
@@ -1153,7 +1154,6 @@ hr:hover {
     pointer-events: none;
   }
 
-
   .about-page .about-intro {
     display: block;
     text-align: center;
@@ -1190,7 +1190,7 @@ hr:hover {
   }
 
   .footer {
-    padding: 3rem 1.1rem 2.5rem;
+    padding: 1rem 0.5rem 1rem;
   }
 
   .footer-container {

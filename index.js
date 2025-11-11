@@ -123,7 +123,6 @@ function loadComponent(selector, file) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const ROOT = location.pathname.includes('/projects/') ? '..' : '.';
-  loadComponent("#navbar-placeholder", '${ROOT}/components/navbar.html');
-  loadComponent("#footer-placeholder", '${ROOT}/components/footer.html');
+  loadComponent("#navbar-placeholder", "/components/navbar.html");
+  loadComponent("#footer-placeholder", "/components/footer.html");
 });
